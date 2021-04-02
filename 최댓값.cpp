@@ -1,27 +1,28 @@
-﻿#include <iostream>
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
 #include <algorithm>
 using namespace std;
-#define MAX(x,y) ((x) > (y) ? (x) : (y))
-
-
-int findMax(int arr[], int n)
+// 20404 김범주 
+void Max() 
 {
-    if (n == 0)
-        return arr[0];
-    int max = findMax(arr, n - 1); 
-    arr[n] = max < arr[n] ? arr[n] : max; 
-    return arr[n];
+	int val;
+	int maxVal;
+	cin >> val;
+	maxVal = val;
+	for (int i = 1; i < 5; i++) {
+	
+		cin >> val;
+
+		if (val == 0)
+			return Max();
+
+		maxVal = max(maxVal, val);
+	}
+	cout << "max값: " << maxVal << endl;
+
+	
 }
 
-void Maximum() {
-    int array[6] = { 0, };
-    for (int i = 0; i < 5; i++)
-    {
-        scanf_s("%d", array + i);
-    }
-    cout << findMax(array, 5);
-}
-int main(void) { Maximum();}
+int main() {
 
+	Max();
+}
